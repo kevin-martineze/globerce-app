@@ -4,15 +4,16 @@ import 'package:globerce_app/ui/core/tokens/colors.dart';
 import 'package:globerce_app/ui/core/tokens/spacing.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
-/// Una tienda en el selector: inicial, nombre y rol.
-class StoreTile extends StatelessWidget {
-  const StoreTile({
+/// Una tienda: inicial, nombre y rol. En el selector y en "Más".
+class GStoreTile extends StatelessWidget {
+  const GStoreTile({
     super.key,
     required this.name,
     required this.role,
     required this.onTap,
     this.active = false,
     this.loading = false,
+    this.showChevron = true,
   });
 
   final String name;
@@ -24,6 +25,9 @@ class StoreTile extends StatelessWidget {
   /// Es la tienda activa de la sesión: se marca con el borde teal.
   final bool active;
   final bool loading;
+
+  /// La flecha del final. Sin ella, la ficha solo informa.
+  final bool showChevron;
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +94,7 @@ class StoreTile extends StatelessWidget {
                       color: colors.primary,
                     ),
                   )
-                else
+                else if (showChevron)
                   Icon(
                     LucideIcons.chevronRight,
                     size: 20,

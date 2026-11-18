@@ -69,8 +69,47 @@ void main() {
     expect(find.text('Hola, Valentina'), findsOneWidget);
     expect(find.text('Estás en Brisa Caribe'), findsOneWidget);
 
+    await tester.tap(find.text('Más'));
+    await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('Cerrar sesión'), 200);
     await tester.tap(find.text('Cerrar sesión'));
     await tester.pumpAndSettle();
     expect(find.text('Iniciar sesión'), findsOneWidget);
+  });
+
+  testWidgets('equipo de una tienda: entra directo y ve su tienda en Más', (
+    tester,
+  ) async {
+    await _pumpApp(tester);
+
+    await _login(
+      tester,
+      'equipo@globerce.test',
+      AuthRepositoryFake.demoPassword,
+    );
+    expect(find.text('Hola, Camilo'), findsOneWidget);
+
+    await tester.tap(find.text('Más'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Lino & Algodón'), findsOneWidget);
+    expect(find.text('Cupones'), findsOneWidget);
+  });
+
+  testWidgets('las pestañas del panel muestran su sección', (tester) async {
+    await _pumpApp(tester);
+    await _login(
+      tester,
+      'equipo@globerce.test',
+      AuthRepositoryFake.demoPassword,
+    );
+
+    await tester.tap(find.text('Pedidos'));
+    await tester.pumpAndSettle();
+    expect(find.text('Muy pronto, tus pedidos aquí'), findsOneWidget);
+
+    await tester.tap(find.text('Inventario'));
+    await tester.pumpAndSettle();
+    expect(find.text('Muy pronto, tu inventario aquí'), findsOneWidget);
   });
 }

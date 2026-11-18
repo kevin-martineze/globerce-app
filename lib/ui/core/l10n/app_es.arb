@@ -1,13 +1,14 @@
 {
   "@@locale": "es",
-
   "appName": "Globerce",
-  "@appName": { "description": "Nombre del producto. Único lugar donde se escribe." },
-
+  "@appName": {
+    "description": "Nombre del producto. Único lugar donde se escribe."
+  },
   "brandEyebrow": "GLOBERCE",
-  "@brandEyebrow": { "description": "Antetítulo de las pantallas de acceso." },
+  "@brandEyebrow": {
+    "description": "Antetítulo de las pantallas de acceso."
+  },
   "brandMarkLabel": "Globerce",
-
   "loginTitle": "Iniciar sesión",
   "loginEmailLabel": "Correo",
   "loginEmailHint": "tu@correo.com",
@@ -17,14 +18,11 @@
   "loginSubmitting": "Entrando…",
   "loginNoStoreQuestion": "¿No tienes tienda?",
   "loginCreateStore": "Créala",
-
   "validationEmailRequired": "Escribe tu correo.",
   "validationEmailInvalid": "Ese correo no se ve bien. Revísalo.",
   "validationPasswordRequired": "Escribe tu contraseña.",
-
   "passwordShow": "Mostrar contraseña",
   "passwordHide": "Ocultar contraseña",
-
   "errorNetwork": "No hay conexión. Revisa tu internet e intenta de nuevo.",
   "errorTimeout": "La conexión está muy lenta. Intenta de nuevo.",
   "errorTooManyAttempts": "Espera un momento antes de intentar de nuevo.",
@@ -33,26 +31,60 @@
   "errorOpenLink": "No pudimos abrir el enlace.",
   "retry": "Reintentar",
   "splashRestoreFailed": "No pudimos revisar tu sesión.",
-
   "noStoresTitle": "Tu cuenta no tiene tiendas todavía",
   "noStoresBody": "Pídele a la dueña de la tienda que te invite, o crea la tuya desde la web.",
-
   "storePickerEyebrow": "ELIGE TU TIENDA",
   "storePickerTitle": "¿Con cuál tienda vas a trabajar?",
   "roleOwner": "Dueña",
   "roleStaff": "Equipo",
-
   "homeGreeting": "Hola, {name}",
   "@homeGreeting": {
-    "placeholders": { "name": { "type": "String" } }
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   },
   "homeGreetingNoName": "Hola",
   "homeActiveStore": "Estás en {store}",
   "@homeActiveStore": {
-    "placeholders": { "store": { "type": "String" } }
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
   },
-  "homeComingSoon": "Aquí vas a ver tus pedidos, productos y tu tienda.",
   "homeSwitchStore": "Cambiar de tienda",
   "logout": "Cerrar sesión",
-  "loggingOut": "Cerrando sesión…"
+  "loggingOut": "Cerrando sesión…",
+  "navSummary": "Resumen",
+  "navOrders": "Pedidos",
+  "navProducts": "Productos",
+  "navInventory": "Inventario",
+  "navMore": "Más",
+  "summaryTodayTitle": "Tu día en la tienda",
+  "summaryTodayBody": "Aquí vas a ver cuánto vendiste hoy y los pedidos que esperan respuesta.",
+  "ordersComingTitle": "Muy pronto, tus pedidos aquí",
+  "ordersComingBody": "Vas a poder confirmarlos, despacharlos y avisarle a tu clienta desde el teléfono. Mientras tanto, están en el panel web.",
+  "productsComingTitle": "Muy pronto, tus productos aquí",
+  "productsComingBody": "Vas a poder crear productos y subir fotos con la cámara. Mientras tanto, están en el panel web.",
+  "inventoryComingTitle": "Muy pronto, tu inventario aquí",
+  "inventoryComingBody": "Vas a poder ajustar existencias de cada talla y color. Mientras tanto, está en el panel web.",
+  "openOnWeb": "Abrir en la web",
+  "opensOnWeb": "Se abre en la web",
+  "moreGroupStore": "Tienda",
+  "moreGroupAccount": "Cuenta",
+  "linkCollections": "Colecciones",
+  "linkDesign": "Diseño",
+  "linkCatalogs": "Catálogos",
+  "linkCoupons": "Cupones",
+  "linkShipping": "Envíos",
+  "linkDomain": "Dominio",
+  "linkRestockAlerts": "Avisos",
+  "linkSupport": "Soporte",
+  "linkSettings": "Ajustes",
+  "linkTeam": "Equipo",
+  "linkPayments": "Pagos",
+  "linkPlan": "Plan",
+  "linkAccount": "Mi cuenta"
 }

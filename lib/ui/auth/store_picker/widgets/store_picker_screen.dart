@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:globerce_app/domain/models/session.dart';
 import 'package:globerce_app/routing/routes.dart';
 import 'package:globerce_app/ui/auth/store_picker/view_models/store_picker_view_model.dart';
-import 'package:globerce_app/ui/auth/store_picker/widgets/store_tile.dart';
 import 'package:globerce_app/ui/core/atoms/g_link.dart';
 import 'package:globerce_app/ui/core/l10n/generated/app_localizations.dart';
 import 'package:globerce_app/ui/core/molecules/g_inline_message.dart';
+import 'package:globerce_app/ui/core/molecules/g_store_tile.dart';
 import 'package:globerce_app/ui/core/templates/auth_template.dart';
 import 'package:globerce_app/ui/core/tokens/spacing.dart';
 import 'package:globerce_app/ui/core/utils/error_text.dart';
@@ -36,14 +36,13 @@ class _StorePickerScreenState extends State<StorePickerScreen> {
   @override
   void dispose() {
     _vm.select.removeListener(_onSelect);
-    _vm.dispose();
     super.dispose();
   }
 
   /// Si se eligió la misma tienda activa, el estado de la sesión no cambia y
   /// el router no redirige: por eso aquí se navega a mano.
   void _onSelect() {
-    if (_vm.select.completed && mounted) context.go(Routes.home);
+    if (_vm.select.completed && mounted) context.go(Routes.summary);
   }
 
   @override
@@ -71,7 +70,7 @@ class _StorePickerScreenState extends State<StorePickerScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               for (final store in _vm.stores) ...[
-                StoreTile(
+                GStoreTile(
                   key: ValueKey(store.id),
                   name: store.name,
                   role: store.role == StoreRole.owner

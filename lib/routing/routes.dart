@@ -6,5 +6,11 @@ abstract final class Routes {
 
   /// Selector de tienda.
   static const stores = '/stores';
-  static const home = '/home';
+
+  // Pestañas del panel, en el orden de la barra inferior.
+  static const summary = '/summary';
+  static const orders = '/orders';
+  static const products = '/products';
+  static const inventory = '/inventory';
+  static const more = '/more';
 }

@@ -298,12 +298,6 @@ abstract class AppLocalizations {
   /// **'Estás en {store}'**
   String homeActiveStore(String store);
 
-  /// No description provided for @homeComingSoon.
-  ///
-  /// In es, this message translates to:
-  /// **'Aquí vas a ver tus pedidos, productos y tu tienda.'**
-  String get homeComingSoon;
-
   /// No description provided for @homeSwitchStore.
   ///
   /// In es, this message translates to:
@@ -321,6 +315,186 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Cerrando sesión…'**
   String get loggingOut;
+
+  /// No description provided for @navSummary.
+  ///
+  /// In es, this message translates to:
+  /// **'Resumen'**
+  String get navSummary;
+
+  /// No description provided for @navOrders.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedidos'**
+  String get navOrders;
+
+  /// No description provided for @navProducts.
+  ///
+  /// In es, this message translates to:
+  /// **'Productos'**
+  String get navProducts;
+
+  /// No description provided for @navInventory.
+  ///
+  /// In es, this message translates to:
+  /// **'Inventario'**
+  String get navInventory;
+
+  /// No description provided for @navMore.
+  ///
+  /// In es, this message translates to:
+  /// **'Más'**
+  String get navMore;
+
+  /// No description provided for @summaryTodayTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Tu día en la tienda'**
+  String get summaryTodayTitle;
+
+  /// No description provided for @summaryTodayBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Aquí vas a ver cuánto vendiste hoy y los pedidos que esperan respuesta.'**
+  String get summaryTodayBody;
+
+  /// No description provided for @ordersComingTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Muy pronto, tus pedidos aquí'**
+  String get ordersComingTitle;
+
+  /// No description provided for @ordersComingBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Vas a poder confirmarlos, despacharlos y avisarle a tu clienta desde el teléfono. Mientras tanto, están en el panel web.'**
+  String get ordersComingBody;
+
+  /// No description provided for @productsComingTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Muy pronto, tus productos aquí'**
+  String get productsComingTitle;
+
+  /// No description provided for @productsComingBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Vas a poder crear productos y subir fotos con la cámara. Mientras tanto, están en el panel web.'**
+  String get productsComingBody;
+
+  /// No description provided for @inventoryComingTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Muy pronto, tu inventario aquí'**
+  String get inventoryComingTitle;
+
+  /// No description provided for @inventoryComingBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Vas a poder ajustar existencias de cada talla y color. Mientras tanto, está en el panel web.'**
+  String get inventoryComingBody;
+
+  /// No description provided for @openOnWeb.
+  ///
+  /// In es, this message translates to:
+  /// **'Abrir en la web'**
+  String get openOnWeb;
+
+  /// No description provided for @opensOnWeb.
+  ///
+  /// In es, this message translates to:
+  /// **'Se abre en la web'**
+  String get opensOnWeb;
+
+  /// No description provided for @moreGroupStore.
+  ///
+  /// In es, this message translates to:
+  /// **'Tienda'**
+  String get moreGroupStore;
+
+  /// No description provided for @moreGroupAccount.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuenta'**
+  String get moreGroupAccount;
+
+  /// No description provided for @linkCollections.
+  ///
+  /// In es, this message translates to:
+  /// **'Colecciones'**
+  String get linkCollections;
+
+  /// No description provided for @linkDesign.
+  ///
+  /// In es, this message translates to:
+  /// **'Diseño'**
+  String get linkDesign;
+
+  /// No description provided for @linkCatalogs.
+  ///
+  /// In es, this message translates to:
+  /// **'Catálogos'**
+  String get linkCatalogs;
+
+  /// No description provided for @linkCoupons.
+  ///
+  /// In es, this message translates to:
+  /// **'Cupones'**
+  String get linkCoupons;
+
+  /// No description provided for @linkShipping.
+  ///
+  /// In es, this message translates to:
+  /// **'Envíos'**
+  String get linkShipping;
+
+  /// No description provided for @linkDomain.
+  ///
+  /// In es, this message translates to:
+  /// **'Dominio'**
+  String get linkDomain;
+
+  /// No description provided for @linkRestockAlerts.
+  ///
+  /// In es, this message translates to:
+  /// **'Avisos'**
+  String get linkRestockAlerts;
+
+  /// No description provided for @linkSupport.
+  ///
+  /// In es, this message translates to:
+  /// **'Soporte'**
+  String get linkSupport;
+
+  /// No description provided for @linkSettings.
+  ///
+  /// In es, this message translates to:
+  /// **'Ajustes'**
+  String get linkSettings;
+
+  /// No description provided for @linkTeam.
+  ///
+  /// In es, this message translates to:
+  /// **'Equipo'**
+  String get linkTeam;
+
+  /// No description provided for @linkPayments.
+  ///
+  /// In es, this message translates to:
+  /// **'Pagos'**
+  String get linkPayments;
+
+  /// No description provided for @linkPlan.
+  ///
+  /// In es, this message translates to:
+  /// **'Plan'**
+  String get linkPlan;
+
+  /// No description provided for @linkAccount.
+  ///
+  /// In es, this message translates to:
+  /// **'Mi cuenta'**
+  String get linkAccount;
 }
 
 class _AppLocalizationsDelegate

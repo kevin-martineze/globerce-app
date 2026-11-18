@@ -2,30 +2,35 @@ import 'package:flutter/foundation.dart';
 
 import 'package:globerce_app/data/repositories/auth/auth_repository.dart';
 import 'package:globerce_app/domain/models/session.dart';
+import 'package:globerce_app/ui/more/more_links.dart';
 import 'package:globerce_app/utils/command.dart';
 import 'package:globerce_app/utils/result.dart';
 
-/// El inicio del panel. Por ahora solo saluda, muestra la tienda activa y
-/// deja cambiar de tienda o salir: el panel de verdad llega en la fase 2.
-class HomeViewModel extends ChangeNotifier {
-  HomeViewModel({required this._auth}) {
+/// La pestaña "Más": la tienda activa, las secciones que no tienen pestaña y
+/// cerrar sesión.
+class MoreViewModel extends ChangeNotifier {
+  MoreViewModel({required this._auth, this._links = moreLinks}) {
     logout = Command0<void>(_logout);
+    _auth.addListener(notifyListeners);
   }
 
   final AuthRepository _auth;
+  final List<MoreLink> _links;
 
   late final Command0<void> logout;
-
-  /// El nombre de pila, o null si la cuenta no tiene nombre.
-  String? get firstName {
-    final fullName = _auth.session?.user.fullName?.trim();
-    if (fullName == null || fullName.isEmpty) return null;
-    return fullName.split(RegExp(r'\s+')).first;
-  }
 
   Store? get activeStore => _auth.session?.activeStore;
 
   bool get canSwitchStore => (_auth.session?.stores.length ?? 0) > 1;
+
+  /// Las secciones de [group] que le tocan al rol de la tienda activa.
+  List<MoreLink> linksFor(MoreGroup group) {
+    final isOwner = activeStore?.role == StoreRole.owner;
+    return [
+      for (final link in _links)
+        if (link.group == group && (!link.ownerOnly || isOwner)) link,
+    ];
+  }
 
   Future<Result<void>> _logout() async {
     await _auth.logout();
@@ -34,6 +39,7 @@ class HomeViewModel extends ChangeNotifier {
 
   @override
   void dispose() {
+    _auth.removeListener(notifyListeners);
     logout.dispose();
     super.dispose();
   }

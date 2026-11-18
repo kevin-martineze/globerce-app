@@ -52,6 +52,10 @@ secretos, tokens ni archivos `config/*.json` de producción.
     `provider`. No se instancian services ni repositorios dentro de widgets.
 14. **La navegación va solo por `go_router`**, con las rutas definidas en
     `routing/routes.dart`. Nunca se usa `Navigator.push` suelto.
+14b. **Los ViewModels se crean con `ViewModelScope`** en el `builder` de la
+    ruta, nunca con `XViewModel(...)` directo: el router vuelve a llamar al
+    `builder` en cada refresco. Las pantallas no liberan su ViewModel; lo
+    hace el scope.
 
 ### Sesión
 

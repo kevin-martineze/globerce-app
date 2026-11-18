@@ -119,10 +119,6 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get homeComingSoon =>
-      'Aquí vas a ver tus pedidos, productos y tu tienda.';
-
-  @override
   String get homeSwitchStore => 'Cambiar de tienda';
 
   @override
@@ -130,4 +126,98 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get loggingOut => 'Cerrando sesión…';
+
+  @override
+  String get navSummary => 'Resumen';
+
+  @override
+  String get navOrders => 'Pedidos';
+
+  @override
+  String get navProducts => 'Productos';
+
+  @override
+  String get navInventory => 'Inventario';
+
+  @override
+  String get navMore => 'Más';
+
+  @override
+  String get summaryTodayTitle => 'Tu día en la tienda';
+
+  @override
+  String get summaryTodayBody =>
+      'Aquí vas a ver cuánto vendiste hoy y los pedidos que esperan respuesta.';
+
+  @override
+  String get ordersComingTitle => 'Muy pronto, tus pedidos aquí';
+
+  @override
+  String get ordersComingBody =>
+      'Vas a poder confirmarlos, despacharlos y avisarle a tu clienta desde el teléfono. Mientras tanto, están en el panel web.';
+
+  @override
+  String get productsComingTitle => 'Muy pronto, tus productos aquí';
+
+  @override
+  String get productsComingBody =>
+      'Vas a poder crear productos y subir fotos con la cámara. Mientras tanto, están en el panel web.';
+
+  @override
+  String get inventoryComingTitle => 'Muy pronto, tu inventario aquí';
+
+  @override
+  String get inventoryComingBody =>
+      'Vas a poder ajustar existencias de cada talla y color. Mientras tanto, está en el panel web.';
+
+  @override
+  String get openOnWeb => 'Abrir en la web';
+
+  @override
+  String get opensOnWeb => 'Se abre en la web';
+
+  @override
+  String get moreGroupStore => 'Tienda';
+
+  @override
+  String get moreGroupAccount => 'Cuenta';
+
+  @override
+  String get linkCollections => 'Colecciones';
+
+  @override
+  String get linkDesign => 'Diseño';
+
+  @override
+  String get linkCatalogs => 'Catálogos';
+
+  @override
+  String get linkCoupons => 'Cupones';
+
+  @override
+  String get linkShipping => 'Envíos';
+
+  @override
+  String get linkDomain => 'Dominio';
+
+  @override
+  String get linkRestockAlerts => 'Avisos';
+
+  @override
+  String get linkSupport => 'Soporte';
+
+  @override
+  String get linkSettings => 'Ajustes';
+
+  @override
+  String get linkTeam => 'Equipo';
+
+  @override
+  String get linkPayments => 'Pagos';
+
+  @override
+  String get linkPlan => 'Plan';
+
+  @override
+  String get linkAccount => 'Mi cuenta';
 }

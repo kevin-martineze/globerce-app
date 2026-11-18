@@ -114,7 +114,9 @@ lib/
 │   │   │   └── widgets/login_screen.dart
 │   │   └── store_picker/          # Si la cuenta tiene varias tiendas
 │   ├── splash/                    # Mientras se restaura la sesión
-│   └── home/                      # Placeholder del panel (fase 2)
+│   ├── panel/                     # Shell con la barra inferior + pestañas "pronto"
+│   ├── summary/                   # Pestaña Resumen
+│   └── more/                      # Pestaña Más: tienda, secciones y cerrar sesión
 └── utils/
     ├── result.dart                # sealed class Result<T>
     └── command.dart               # Command0 / Command1<T, A>
@@ -239,8 +241,20 @@ lo que no se envuelve.
 | molecule | `GInlineMessage` | Mensaje de error o éxito debajo del formulario. |
 | template | `AuthTemplate` | Isotipo, antetítulo, título, contenido y pie. Hace scroll, respeta el teclado y el área segura, y tiene un ancho máximo de 420. Es el equivalente de `AuthTemplate.svelte`. |
 
-Más adelante: `PanelTemplate` (barra superior y navegación inferior) y
-`EmptyStateTemplate`.
+### Componentes del panel (fase 2)
+
+| Nivel | Componente | Qué es |
+| --- | --- | --- |
+| molecule | `GStoreTile` | Una tienda: inicial, nombre y rol. En el selector y en "Más". |
+| molecule | `GMenuRow` / `GMenuGroup` | Filas de menú agrupadas en una tarjeta con título. |
+| molecule | `GEmptyState` | Icono, título y una línea sobre lino. |
+| organism | `GBottomNav` | La barra inferior. La pestaña activa va en el color del texto con indicador lino, no en teal. |
+| template | `PanelPageTemplate` | Título grande, subtítulo y contenido con scroll. Sin barra superior. |
+
+Los ViewModels se crean con `ViewModelScope` (en `ui/core/utils/`), no
+directo en el `builder` del router: `GoRouter` vuelve a llamar al `builder` en
+cada refresco y la pantalla recibiría un ViewModel nuevo a mitad de una
+acción.
 
 ---
 
@@ -346,7 +360,7 @@ iOS bloquea `http` por defecto. En desarrollo se permite solo con
 - [x] `gen-l10n` con `app_es.arb`.
 - [x] Router con `/` (arranque), `/login`, `/stores` y `/home`.
 - [x] Nombre visible "Globerce" (iOS y Android).
-- [ ] Icono de la app y pantalla de lanzamiento.
+- [x] Icono de la app y pantalla de lanzamiento (salen del isotipo de 512 px; regenerar cuando llegue la marca en vector).
 
 **Fase 1 — Login**
 - [x] Átomos, moléculas y `AuthTemplate` (§5).
@@ -355,12 +369,17 @@ iOS bloquea `http` por defecto. En desarrollo se permite solo con
 - [x] `LoginViewModel` + `LoginScreen`, con todos los estados de §6.
 - [x] Splash con restauración de sesión, selector de tienda y un home de prueba con "Cerrar sesión".
 - [x] Tests: ViewModel con el fake, flujo completo de login con widgets, y rotación single-flight en el repositorio.
-- [ ] Test del interceptor HTTP (reintento después de un `401`).
+- [x] Test del interceptor HTTP (reintento después de un `401`).
 - [x] Probado en el simulador contra el fake (`config/fake.json`).
-- [ ] Probado en el simulador contra la API local (`config/sim.json`).
+- [ ] Probado en el simulador contra la API local (`config/sim.json`). Este Mac no tiene Docker ni Postgres para levantar `ecommerce-api`.
 
-**Fase 2 — Shell del panel**: navegación inferior con las secciones del
-panel web (se definen leyendo `shopping-sas/src/routes/(admin)`).
+**Fase 2 — Shell del panel**
+- [x] Barra inferior con el orden de `admin-nav.ts` de la web: Resumen, Pedidos, Productos, Inventario y Más.
+- [x] Cada pestaña guarda su pila (`StatefulShellRoute.indexedStack`); tocar la activa vuelve a su raíz.
+- [x] Resumen: saludo, tienda activa y el lugar de las cifras del día.
+- [x] Pedidos, Productos e Inventario: estado "muy pronto" con enlace a la misma sección del panel web.
+- [x] Más: tienda activa (toca para cambiar si hay varias), grupos "Tienda" y "Cuenta" con enlaces al panel web, y cerrar sesión. Dominio solo para la dueña, como en la web.
+- [ ] Contadores en la barra (pedidos pendientes, soporte sin leer), cuando exista su endpoint en la app.
 
 **Fase 3 en adelante**: pedidos (lista, detalle, cambio de estado),
 notificaciones push de pedidos nuevos, productos, inventario. Por definir.
@@ -390,3 +409,7 @@ flutter build ios --simulator --debug
    26.5. Hay que confirmar si puede instalar apps en el teléfono.
 4. **URL de producción de la API.**
 5. **`destructive` en claro:** confirmarlo contra el kit de marca.
+6. **Marca en vector (SVG o PDF).** El icono de la app sale del isotipo de
+   512 px escalado a 1024; con el vector queda nítido en la App Store.
+7. **Sesión del panel web.** Las secciones que todavía abren la web piden
+   entrar otra vez allá: la sesión de la app no viaja al navegador.
