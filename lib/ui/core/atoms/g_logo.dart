@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-/// El isotipo de Globerce: el hexágono con la G en negativo.
+/// El isotipo de Globerce: la G blanca en relieve abrazando la esfera teal.
 ///
-/// Es un mapa de bits de 512 px porque así vino la marca (el mismo
-/// `logo.png` de shopping-sas). Se pinta siempre más chico para que en
-/// pantallas densas se vea nítido.
+/// Es un render 3D de 512 px con fondo transparente (el mismo `logo.png` de
+/// shopping-sas): el volumen y la luz no caben en un vector. Se pinta siempre
+/// más chico para que en pantallas densas se vea nítido.
 class GLogo extends StatelessWidget {
   const GLogo({super.key, this.size = 44, this.semanticLabel});
 
