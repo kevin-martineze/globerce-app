@@ -15,6 +15,7 @@ class PanelPageTemplate extends StatelessWidget {
     required this.children,
     this.subtitle,
     this.leading,
+    this.onRefresh,
   });
 
   final String title;
@@ -24,45 +25,55 @@ class PanelPageTemplate extends StatelessWidget {
   final Widget? leading;
   final List<Widget> children;
 
+  /// Si está, la pantalla se recarga al arrastrar hacia abajo.
+  final RefreshCallback? onRefresh;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
     final textTheme = Theme.of(context).textTheme;
     final subtitle = this.subtitle;
+    final onRefresh = this.onRefresh;
+
+    final list = ListView(
+      // Siempre se puede arrastrar, aunque el contenido quepa: así funciona
+      // el "arrastra para recargar" en una lista corta.
+      physics: const AlwaysScrollableScrollPhysics(),
+      padding: const EdgeInsets.fromLTRB(
+        Space.gutter,
+        Space.xl,
+        Space.gutter,
+        Space.xxl,
+      ),
+      children: [
+        if (leading != null) ...[leading!, const SizedBox(height: Space.xl)],
+        Semantics(
+          header: true,
+          child: Text(title, style: textTheme.headlineMedium),
+        ),
+        if (subtitle != null) ...[
+          const SizedBox(height: Space.xs),
+          Text(
+            subtitle,
+            style: textTheme.bodyLarge?.copyWith(color: colors.mutedForeground),
+          ),
+        ],
+        const SizedBox(height: Space.xl),
+        ...children,
+      ],
+    );
 
     return Scaffold(
       backgroundColor: colors.background,
       body: SafeArea(
         bottom: false,
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(
-            Space.gutter,
-            Space.xl,
-            Space.gutter,
-            Space.xxl,
-          ),
-          children: [
-            if (leading != null) ...[
-              leading!,
-              const SizedBox(height: Space.xl),
-            ],
-            Semantics(
-              header: true,
-              child: Text(title, style: textTheme.headlineMedium),
-            ),
-            if (subtitle != null) ...[
-              const SizedBox(height: Space.xs),
-              Text(
-                subtitle,
-                style: textTheme.bodyLarge?.copyWith(
-                  color: colors.mutedForeground,
-                ),
+        child: onRefresh == null
+            ? list
+            : RefreshIndicator(
+                onRefresh: onRefresh,
+                color: colors.primary,
+                child: list,
               ),
-            ],
-            const SizedBox(height: Space.xl),
-            ...children,
-          ],
-        ),
       ),
     );
   }

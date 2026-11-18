@@ -381,8 +381,19 @@ iOS bloquea `http` por defecto. En desarrollo se permite solo con
 - [x] Más: tienda activa (toca para cambiar si hay varias), grupos "Tienda" y "Cuenta" con enlaces al panel web, y cerrar sesión. Dominio solo para la dueña, como en la web.
 - [ ] Contadores en la barra (pedidos pendientes, soporte sin leer), cuando exista su endpoint en la app.
 
-**Fase 3 en adelante**: pedidos (lista, detalle, cambio de estado),
-notificaciones push de pedidos nuevos, productos, inventario. Por definir.
+**Fase 3 — Pedidos y resumen**
+- [x] `OrdersApi` (`/stores/:storeId/dashboard` y `/orders`) y `OrdersRepository` (remoto y fake). El repositorio avisa cuando cambia un pedido o la tienda activa, y las pantallas que lo escuchan recargan solas.
+- [x] Un estado que la app no conoce vuelve como respuesta inválida, no como pantalla rota.
+- [x] Resumen con las cifras de `DashboardDto`: por responder (y cuántos llevan más de un día), ventas del mes, lo que se está acabando y los avisos de reposición.
+- [x] Lista de pedidos: búsqueda por número o nombre, filtro por estado, "ver más" de 20 en 20 y arrastrar para recargar. El último filtro gana aunque cambie mientras carga.
+- [x] Detalle: líneas y totales, clienta, escribirle por WhatsApp, cambio de estado y nota interna. Cancelar pide confirmación y un pedido cancelado no ofrece reabrirse (la API responde `409`).
+- [x] Componentes nuevos: `GBadge`, `GBackLink`, `GSection`, `GStatTile`, `GFilterChips`, `GSelectRow`, `showConfirmSheet` y la variante `destructive` de `GButton`.
+- [x] Tests: repositorio remoto con un adaptador HTTP falso, ViewModels de lista, detalle y resumen, y el flujo con widgets.
+- [x] Probado en el simulador contra el fake.
+- [ ] Probado contra la API local.
+
+**Fase 4 en adelante**: notificaciones push de pedidos nuevos, contadores en
+la barra, productos (con fotos desde la cámara) e inventario. Por definir.
 
 ---
 

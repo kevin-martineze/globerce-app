@@ -24,6 +24,9 @@ class GTextField extends StatelessWidget {
     this.onChanged,
     this.onSubmitted,
     this.suffix,
+    this.prefixIcon,
+    this.minLines,
+    this.maxLines = 1,
   });
 
   final TextEditingController? controller;
@@ -43,6 +46,14 @@ class GTextField extends StatelessWidget {
   /// Lo que va al final del campo, por ejemplo el ojo de la contraseña.
   final Widget? suffix;
 
+  /// Icono al inicio del campo, por ejemplo la lupa del buscador.
+  final IconData? prefixIcon;
+
+  /// Para textos largos, como una nota: [minLines] filas visibles y crece
+  /// hasta [maxLines]. Null en [maxLines] no pone tope.
+  final int? minLines;
+  final int? maxLines;
+
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
@@ -60,6 +71,8 @@ class GTextField extends StatelessWidget {
       textCapitalization: textCapitalization,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
+      minLines: minLines,
+      maxLines: obscureText ? 1 : maxLines,
       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
         color: enabled ? colors.foreground : colors.mutedForeground,
       ),
@@ -68,6 +81,9 @@ class GTextField extends StatelessWidget {
         errorText: errorText,
         errorMaxLines: 3,
         suffixIcon: suffix,
+        prefixIcon: prefixIcon == null
+            ? null
+            : Icon(prefixIcon, size: 18, color: colors.mutedForeground),
       ),
     );
   }

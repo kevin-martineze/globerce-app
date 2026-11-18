@@ -346,30 +346,6 @@ abstract class AppLocalizations {
   /// **'Más'**
   String get navMore;
 
-  /// No description provided for @summaryTodayTitle.
-  ///
-  /// In es, this message translates to:
-  /// **'Tu día en la tienda'**
-  String get summaryTodayTitle;
-
-  /// No description provided for @summaryTodayBody.
-  ///
-  /// In es, this message translates to:
-  /// **'Aquí vas a ver cuánto vendiste hoy y los pedidos que esperan respuesta.'**
-  String get summaryTodayBody;
-
-  /// No description provided for @ordersComingTitle.
-  ///
-  /// In es, this message translates to:
-  /// **'Muy pronto, tus pedidos aquí'**
-  String get ordersComingTitle;
-
-  /// No description provided for @ordersComingBody.
-  ///
-  /// In es, this message translates to:
-  /// **'Vas a poder confirmarlos, despacharlos y avisarle a tu clienta desde el teléfono. Mientras tanto, están en el panel web.'**
-  String get ordersComingBody;
-
   /// No description provided for @productsComingTitle.
   ///
   /// In es, this message translates to:
@@ -495,6 +471,390 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Mi cuenta'**
   String get linkAccount;
+
+  /// No description provided for @summaryLoadFailed.
+  ///
+  /// In es, this message translates to:
+  /// **'No pudimos cargar el resumen.'**
+  String get summaryLoadFailed;
+
+  /// No description provided for @summaryPendingLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Por responder'**
+  String get summaryPendingLabel;
+
+  /// No description provided for @summaryPendingNone.
+  ///
+  /// In es, this message translates to:
+  /// **'Estás al día'**
+  String get summaryPendingNone;
+
+  /// No description provided for @summaryPendingStale.
+  ///
+  /// In es, this message translates to:
+  /// **'{count, plural, =1{1 lleva más de un día} other{{count} llevan más de un día}}'**
+  String summaryPendingStale(int count);
+
+  /// No description provided for @summaryPendingFresh.
+  ///
+  /// In es, this message translates to:
+  /// **'Ninguno lleva más de un día'**
+  String get summaryPendingFresh;
+
+  /// No description provided for @summaryMonthLabel.
+  ///
+  /// In es, this message translates to:
+  /// **'Ventas del mes'**
+  String get summaryMonthLabel;
+
+  /// No description provided for @summaryMonthOrders.
+  ///
+  /// In es, this message translates to:
+  /// **'{count, plural, =0{Sin pedidos todavía} =1{1 pedido} other{{count} pedidos}}'**
+  String summaryMonthOrders(int count);
+
+  /// No description provided for @summaryLowStockTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Se está acabando'**
+  String get summaryLowStockTitle;
+
+  /// No description provided for @summaryStockLeft.
+  ///
+  /// In es, this message translates to:
+  /// **'{count, plural, =0{Agotado} =1{Queda 1} other{Quedan {count}}}'**
+  String summaryStockLeft(int count);
+
+  /// No description provided for @summaryRestock.
+  ///
+  /// In es, this message translates to:
+  /// **'{count, plural, =1{1 clienta espera que vuelva algo} other{{count} clientas esperan que vuelva algo}}'**
+  String summaryRestock(int count);
+
+  /// No description provided for @ordersCount.
+  ///
+  /// In es, this message translates to:
+  /// **'{count, plural, =0{Sin pedidos} =1{1 pedido} other{{count} pedidos}}'**
+  String ordersCount(int count);
+
+  /// No description provided for @ordersSearchHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Busca por número o nombre'**
+  String get ordersSearchHint;
+
+  /// No description provided for @ordersFilterAll.
+  ///
+  /// In es, this message translates to:
+  /// **'Todos'**
+  String get ordersFilterAll;
+
+  /// No description provided for @ordersFilterPending.
+  ///
+  /// In es, this message translates to:
+  /// **'Pendientes'**
+  String get ordersFilterPending;
+
+  /// No description provided for @ordersFilterConfirmed.
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmados'**
+  String get ordersFilterConfirmed;
+
+  /// No description provided for @ordersFilterShipped.
+  ///
+  /// In es, this message translates to:
+  /// **'Enviados'**
+  String get ordersFilterShipped;
+
+  /// No description provided for @ordersFilterDelivered.
+  ///
+  /// In es, this message translates to:
+  /// **'Entregados'**
+  String get ordersFilterDelivered;
+
+  /// No description provided for @ordersFilterCancelled.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelados'**
+  String get ordersFilterCancelled;
+
+  /// No description provided for @ordersEmptyTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Todavía no hay pedidos'**
+  String get ordersEmptyTitle;
+
+  /// No description provided for @ordersEmptyBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Cuando una clienta compre en tu tienda, su pedido aparece aquí.'**
+  String get ordersEmptyBody;
+
+  /// No description provided for @ordersEmptyFilteredTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Nada por aquí'**
+  String get ordersEmptyFilteredTitle;
+
+  /// No description provided for @ordersEmptyFilteredBody.
+  ///
+  /// In es, this message translates to:
+  /// **'No hay pedidos con ese filtro. Prueba con otro estado o busca otro nombre.'**
+  String get ordersEmptyFilteredBody;
+
+  /// No description provided for @ordersLoadMore.
+  ///
+  /// In es, this message translates to:
+  /// **'Ver más pedidos'**
+  String get ordersLoadMore;
+
+  /// No description provided for @ordersLoadFailed.
+  ///
+  /// In es, this message translates to:
+  /// **'No pudimos cargar los pedidos.'**
+  String get ordersLoadFailed;
+
+  /// No description provided for @orderStatusPending.
+  ///
+  /// In es, this message translates to:
+  /// **'Pendiente'**
+  String get orderStatusPending;
+
+  /// No description provided for @orderStatusConfirmed.
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmado'**
+  String get orderStatusConfirmed;
+
+  /// No description provided for @orderStatusShipped.
+  ///
+  /// In es, this message translates to:
+  /// **'Enviado'**
+  String get orderStatusShipped;
+
+  /// No description provided for @orderStatusDelivered.
+  ///
+  /// In es, this message translates to:
+  /// **'Entregado'**
+  String get orderStatusDelivered;
+
+  /// No description provided for @orderStatusCancelled.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelado'**
+  String get orderStatusCancelled;
+
+  /// No description provided for @paymentUnpaid.
+  ///
+  /// In es, this message translates to:
+  /// **'Sin pagar'**
+  String get paymentUnpaid;
+
+  /// No description provided for @paymentPending.
+  ///
+  /// In es, this message translates to:
+  /// **'Pago en curso'**
+  String get paymentPending;
+
+  /// No description provided for @paymentPaid.
+  ///
+  /// In es, this message translates to:
+  /// **'Pagado'**
+  String get paymentPaid;
+
+  /// No description provided for @paymentFailed.
+  ///
+  /// In es, this message translates to:
+  /// **'Pago fallido'**
+  String get paymentFailed;
+
+  /// No description provided for @orderNumber.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedido #{number}'**
+  String orderNumber(String number);
+
+  /// No description provided for @orderNumberShort.
+  ///
+  /// In es, this message translates to:
+  /// **'#{number}'**
+  String orderNumberShort(String number);
+
+  /// No description provided for @orderLoadFailed.
+  ///
+  /// In es, this message translates to:
+  /// **'No pudimos cargar el pedido.'**
+  String get orderLoadFailed;
+
+  /// No description provided for @orderChatOpened.
+  ///
+  /// In es, this message translates to:
+  /// **'Abrió el chat de WhatsApp'**
+  String get orderChatOpened;
+
+  /// No description provided for @orderChatNotOpened.
+  ///
+  /// In es, this message translates to:
+  /// **'Todavía no abre el chat de WhatsApp'**
+  String get orderChatNotOpened;
+
+  /// No description provided for @orderWriteWhatsApp.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribirle por WhatsApp'**
+  String get orderWriteWhatsApp;
+
+  /// No description provided for @orderWhatsAppMessage.
+  ///
+  /// In es, this message translates to:
+  /// **'Hola {name}, te escribo de {store} por tu pedido #{number}.'**
+  String orderWhatsAppMessage(String name, String store, String number);
+
+  /// No description provided for @orderProductsTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Productos'**
+  String get orderProductsTitle;
+
+  /// No description provided for @orderQtyTimesPrice.
+  ///
+  /// In es, this message translates to:
+  /// **'{qty} × {price}'**
+  String orderQtyTimesPrice(String qty, String price);
+
+  /// No description provided for @orderSubtotal.
+  ///
+  /// In es, this message translates to:
+  /// **'Subtotal'**
+  String get orderSubtotal;
+
+  /// No description provided for @orderDiscount.
+  ///
+  /// In es, this message translates to:
+  /// **'Descuento'**
+  String get orderDiscount;
+
+  /// No description provided for @orderDiscountWithCoupon.
+  ///
+  /// In es, this message translates to:
+  /// **'Descuento ({code})'**
+  String orderDiscountWithCoupon(String code);
+
+  /// No description provided for @orderShipping.
+  ///
+  /// In es, this message translates to:
+  /// **'Envío'**
+  String get orderShipping;
+
+  /// No description provided for @orderShippingZone.
+  ///
+  /// In es, this message translates to:
+  /// **'Envío · {zone}'**
+  String orderShippingZone(String zone);
+
+  /// No description provided for @orderShippingFree.
+  ///
+  /// In es, this message translates to:
+  /// **'Gratis'**
+  String get orderShippingFree;
+
+  /// No description provided for @orderTotal.
+  ///
+  /// In es, this message translates to:
+  /// **'Total'**
+  String get orderTotal;
+
+  /// No description provided for @orderCustomerTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Clienta'**
+  String get orderCustomerTitle;
+
+  /// No description provided for @orderCustomerNotes.
+  ///
+  /// In es, this message translates to:
+  /// **'Nota de la clienta'**
+  String get orderCustomerNotes;
+
+  /// No description provided for @orderStatusTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Estado'**
+  String get orderStatusTitle;
+
+  /// No description provided for @orderStatusBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar devuelve el stock al inventario y libera el cupón.'**
+  String get orderStatusBody;
+
+  /// No description provided for @orderStatusCancelledBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Este pedido está cancelado: su stock ya volvió al inventario y no se puede reabrir.'**
+  String get orderStatusCancelledBody;
+
+  /// No description provided for @orderSaving.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardando…'**
+  String get orderSaving;
+
+  /// No description provided for @orderCancelConfirmTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Cancelar el pedido #{number}?'**
+  String orderCancelConfirmTitle(String number);
+
+  /// No description provided for @orderCancelConfirmBody.
+  ///
+  /// In es, this message translates to:
+  /// **'El stock vuelve al inventario y el cupón queda libre. Después no se puede reabrir.'**
+  String get orderCancelConfirmBody;
+
+  /// No description provided for @orderCancelConfirm.
+  ///
+  /// In es, this message translates to:
+  /// **'Sí, cancelar pedido'**
+  String get orderCancelConfirm;
+
+  /// No description provided for @orderCancelKeep.
+  ///
+  /// In es, this message translates to:
+  /// **'No, dejarlo así'**
+  String get orderCancelKeep;
+
+  /// No description provided for @orderNotesTitle.
+  ///
+  /// In es, this message translates to:
+  /// **'Nota interna'**
+  String get orderNotesTitle;
+
+  /// No description provided for @orderNotesBody.
+  ///
+  /// In es, this message translates to:
+  /// **'Solo la ve tu equipo. Sirve para acuerdos hechos por chat.'**
+  String get orderNotesBody;
+
+  /// No description provided for @orderNotesHint.
+  ///
+  /// In es, this message translates to:
+  /// **'Escribe una nota'**
+  String get orderNotesHint;
+
+  /// No description provided for @orderNotesSave.
+  ///
+  /// In es, this message translates to:
+  /// **'Guardar nota'**
+  String get orderNotesSave;
+
+  /// No description provided for @orderNotesSaved.
+  ///
+  /// In es, this message translates to:
+  /// **'Nota guardada.'**
+  String get orderNotesSaved;
 }
 
 class _AppLocalizationsDelegate

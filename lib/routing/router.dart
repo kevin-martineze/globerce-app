@@ -9,6 +9,10 @@ import 'package:globerce_app/ui/core/l10n/generated/app_localizations.dart';
 import 'package:globerce_app/ui/core/utils/view_model_scope.dart';
 import 'package:globerce_app/ui/more/view_models/more_view_model.dart';
 import 'package:globerce_app/ui/more/widgets/more_screen.dart';
+import 'package:globerce_app/ui/orders/view_models/order_detail_view_model.dart';
+import 'package:globerce_app/ui/orders/view_models/orders_view_model.dart';
+import 'package:globerce_app/ui/orders/widgets/order_detail_screen.dart';
+import 'package:globerce_app/ui/orders/widgets/orders_screen.dart';
 import 'package:globerce_app/ui/panel/widgets/coming_soon_screen.dart';
 import 'package:globerce_app/ui/panel/widgets/panel_shell.dart';
 import 'package:globerce_app/ui/splash/view_models/splash_view_model.dart';
@@ -64,7 +68,10 @@ GoRouter createRouter(AuthRepository auth) {
               GoRoute(
                 path: Routes.summary,
                 builder: (context, _) => ViewModelScope(
-                  create: (context) => SummaryViewModel(auth: context.read()),
+                  create: (context) => SummaryViewModel(
+                    auth: context.read(),
+                    orders: context.read(),
+                  ),
                   builder: (_, vm) => SummaryScreen(viewModel: vm),
                 ),
               ),
@@ -74,16 +81,28 @@ GoRouter createRouter(AuthRepository auth) {
             routes: [
               GoRoute(
                 path: Routes.orders,
-                builder: (context, _) {
-                  final l10n = AppLocalizations.of(context);
-                  return ComingSoonScreen(
-                    title: l10n.navOrders,
-                    icon: LucideIcons.receipt,
-                    emptyTitle: l10n.ordersComingTitle,
-                    emptyBody: l10n.ordersComingBody,
-                    webPath: '/admin/orders',
-                  );
-                },
+                builder: (context, _) => ViewModelScope(
+                  create: (context) => OrdersViewModel(orders: context.read()),
+                  builder: (_, vm) => OrdersScreen(viewModel: vm),
+                ),
+                routes: [
+                  GoRoute(
+                    path: ':orderId',
+                    builder: (context, state) {
+                      final orderId = state.pathParameters['orderId'] ?? '';
+                      return ViewModelScope(
+                        // Otro pedido es otra pantalla, con su propio ViewModel.
+                        key: ValueKey(orderId),
+                        create: (context) => OrderDetailViewModel(
+                          orderId: orderId,
+                          orders: context.read(),
+                          auth: context.read(),
+                        ),
+                        builder: (_, vm) => OrderDetailScreen(viewModel: vm),
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),

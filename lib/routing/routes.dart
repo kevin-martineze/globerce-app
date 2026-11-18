@@ -10,6 +10,9 @@ abstract final class Routes {
   // Pestañas del panel, en el orden de la barra inferior.
   static const summary = '/summary';
   static const orders = '/orders';
+
+  /// El detalle de un pedido, dentro de la pestaña de pedidos.
+  static String order(String orderId) => '$orders/$orderId';
   static const products = '/products';
   static const inventory = '/inventory';
   static const more = '/more';

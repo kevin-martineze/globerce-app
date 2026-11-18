@@ -9,6 +9,9 @@ enum GButtonVariant {
 
   /// Sin fondo, con borde: acciones secundarias.
   outline,
+
+  /// Para lo que no tiene vuelta atrás, como cancelar un pedido.
+  destructive,
 }
 
 /// El botón de Globerce: píldora y peso 600.
@@ -53,6 +56,11 @@ class GButton extends StatelessWidget {
         Colors.transparent,
         colors.foreground,
         BorderSide(color: colors.input),
+      ),
+      GButtonVariant.destructive => (
+        colors.destructive,
+        colors.primaryForeground,
+        BorderSide.none,
       ),
     };
 

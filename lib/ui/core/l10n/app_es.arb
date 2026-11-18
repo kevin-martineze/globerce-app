@@ -62,10 +62,6 @@
   "navProducts": "Productos",
   "navInventory": "Inventario",
   "navMore": "Más",
-  "summaryTodayTitle": "Tu día en la tienda",
-  "summaryTodayBody": "Aquí vas a ver cuánto vendiste hoy y los pedidos que esperan respuesta.",
-  "ordersComingTitle": "Muy pronto, tus pedidos aquí",
-  "ordersComingBody": "Vas a poder confirmarlos, despacharlos y avisarle a tu clienta desde el teléfono. Mientras tanto, están en el panel web.",
   "productsComingTitle": "Muy pronto, tus productos aquí",
   "productsComingBody": "Vas a poder crear productos y subir fotos con la cámara. Mientras tanto, están en el panel web.",
   "inventoryComingTitle": "Muy pronto, tu inventario aquí",
@@ -86,5 +82,162 @@
   "linkTeam": "Equipo",
   "linkPayments": "Pagos",
   "linkPlan": "Plan",
-  "linkAccount": "Mi cuenta"
+  "linkAccount": "Mi cuenta",
+  "summaryLoadFailed": "No pudimos cargar el resumen.",
+  "summaryPendingLabel": "Por responder",
+  "summaryPendingNone": "Estás al día",
+  "summaryPendingStale": "{count, plural, =1{1 lleva más de un día} other{{count} llevan más de un día}}",
+  "@summaryPendingStale": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryPendingFresh": "Ninguno lleva más de un día",
+  "summaryMonthLabel": "Ventas del mes",
+  "summaryMonthOrders": "{count, plural, =0{Sin pedidos todavía} =1{1 pedido} other{{count} pedidos}}",
+  "@summaryMonthOrders": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryLowStockTitle": "Se está acabando",
+  "summaryStockLeft": "{count, plural, =0{Agotado} =1{Queda 1} other{Quedan {count}}}",
+  "@summaryStockLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryRestock": "{count, plural, =1{1 clienta espera que vuelva algo} other{{count} clientas esperan que vuelva algo}}",
+  "@summaryRestock": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ordersCount": "{count, plural, =0{Sin pedidos} =1{1 pedido} other{{count} pedidos}}",
+  "@ordersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ordersSearchHint": "Busca por número o nombre",
+  "ordersFilterAll": "Todos",
+  "ordersFilterPending": "Pendientes",
+  "ordersFilterConfirmed": "Confirmados",
+  "ordersFilterShipped": "Enviados",
+  "ordersFilterDelivered": "Entregados",
+  "ordersFilterCancelled": "Cancelados",
+  "ordersEmptyTitle": "Todavía no hay pedidos",
+  "ordersEmptyBody": "Cuando una clienta compre en tu tienda, su pedido aparece aquí.",
+  "ordersEmptyFilteredTitle": "Nada por aquí",
+  "ordersEmptyFilteredBody": "No hay pedidos con ese filtro. Prueba con otro estado o busca otro nombre.",
+  "ordersLoadMore": "Ver más pedidos",
+  "ordersLoadFailed": "No pudimos cargar los pedidos.",
+  "orderStatusPending": "Pendiente",
+  "orderStatusConfirmed": "Confirmado",
+  "orderStatusShipped": "Enviado",
+  "orderStatusDelivered": "Entregado",
+  "orderStatusCancelled": "Cancelado",
+  "paymentUnpaid": "Sin pagar",
+  "paymentPending": "Pago en curso",
+  "paymentPaid": "Pagado",
+  "paymentFailed": "Pago fallido",
+  "orderNumber": "Pedido #{number}",
+  "@orderNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "orderNumberShort": "#{number}",
+  "@orderNumberShort": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "orderLoadFailed": "No pudimos cargar el pedido.",
+  "orderChatOpened": "Abrió el chat de WhatsApp",
+  "orderChatNotOpened": "Todavía no abre el chat de WhatsApp",
+  "orderWriteWhatsApp": "Escribirle por WhatsApp",
+  "orderWhatsAppMessage": "Hola {name}, te escribo de {store} por tu pedido #{number}.",
+  "@orderWhatsAppMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "store": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "orderProductsTitle": "Productos",
+  "orderQtyTimesPrice": "{qty} × {price}",
+  "@orderQtyTimesPrice": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "orderSubtotal": "Subtotal",
+  "orderDiscount": "Descuento",
+  "orderDiscountWithCoupon": "Descuento ({code})",
+  "@orderDiscountWithCoupon": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "orderShipping": "Envío",
+  "orderShippingZone": "Envío · {zone}",
+  "@orderShippingZone": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "orderShippingFree": "Gratis",
+  "orderTotal": "Total",
+  "orderCustomerTitle": "Clienta",
+  "orderCustomerNotes": "Nota de la clienta",
+  "orderStatusTitle": "Estado",
+  "orderStatusBody": "Cancelar devuelve el stock al inventario y libera el cupón.",
+  "orderStatusCancelledBody": "Este pedido está cancelado: su stock ya volvió al inventario y no se puede reabrir.",
+  "orderSaving": "Guardando…",
+  "orderCancelConfirmTitle": "¿Cancelar el pedido #{number}?",
+  "@orderCancelConfirmTitle": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "orderCancelConfirmBody": "El stock vuelve al inventario y el cupón queda libre. Después no se puede reabrir.",
+  "orderCancelConfirm": "Sí, cancelar pedido",
+  "orderCancelKeep": "No, dejarlo así",
+  "orderNotesTitle": "Nota interna",
+  "orderNotesBody": "Solo la ve tu equipo. Sirve para acuerdos hechos por chat.",
+  "orderNotesHint": "Escribe una nota",
+  "orderNotesSave": "Guardar nota",
+  "orderNotesSaved": "Nota guardada."
 }
