@@ -1,0 +1,40 @@
+# Equivalente al TypeScript strict de la web. Ver CLAUDE.md §1.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    # Las reglas de CLAUDE.md que el analizador puede vigilar fallan como error.
+    avoid_print: error
+    avoid_dynamic_calls: error
+  exclude:
+    - build/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - lib/ui/core/l10n/generated/**
+    - android/**
+    - ios/**
+
+linter:
+  rules:
+    - always_declare_return_types
+    - always_use_package_imports
+    - avoid_dynamic_calls
+    - avoid_print
+    - avoid_relative_lib_imports
+    - avoid_types_as_parameter_names
+    - cancel_subscriptions
+    - directives_ordering
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_single_quotes
+    - require_trailing_commas
+    - sort_child_properties_last
+    - unawaited_futures
+    - use_super_parameters

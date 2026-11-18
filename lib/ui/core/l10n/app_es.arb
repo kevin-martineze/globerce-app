@@ -1,0 +1,58 @@
+{
+  "@@locale": "es",
+
+  "appName": "Globerce",
+  "@appName": { "description": "Nombre del producto. Único lugar donde se escribe." },
+
+  "brandEyebrow": "GLOBERCE",
+  "@brandEyebrow": { "description": "Antetítulo de las pantallas de acceso." },
+  "brandMarkLabel": "Globerce",
+
+  "loginTitle": "Iniciar sesión",
+  "loginEmailLabel": "Correo",
+  "loginEmailHint": "tu@correo.com",
+  "loginPasswordLabel": "Contraseña",
+  "loginForgotPassword": "¿La olvidaste?",
+  "loginSubmit": "Entrar",
+  "loginSubmitting": "Entrando…",
+  "loginNoStoreQuestion": "¿No tienes tienda?",
+  "loginCreateStore": "Créala",
+
+  "validationEmailRequired": "Escribe tu correo.",
+  "validationEmailInvalid": "Ese correo no se ve bien. Revísalo.",
+  "validationPasswordRequired": "Escribe tu contraseña.",
+
+  "passwordShow": "Mostrar contraseña",
+  "passwordHide": "Ocultar contraseña",
+
+  "errorNetwork": "No hay conexión. Revisa tu internet e intenta de nuevo.",
+  "errorTimeout": "La conexión está muy lenta. Intenta de nuevo.",
+  "errorTooManyAttempts": "Espera un momento antes de intentar de nuevo.",
+  "errorUnknown": "Algo salió mal. Intenta de nuevo.",
+  "errorSessionExpired": "Tu sesión se cerró. Vuelve a entrar.",
+  "errorOpenLink": "No pudimos abrir el enlace.",
+  "retry": "Reintentar",
+  "splashRestoreFailed": "No pudimos revisar tu sesión.",
+
+  "noStoresTitle": "Tu cuenta no tiene tiendas todavía",
+  "noStoresBody": "Pídele a la dueña de la tienda que te invite, o crea la tuya desde la web.",
+
+  "storePickerEyebrow": "ELIGE TU TIENDA",
+  "storePickerTitle": "¿Con cuál tienda vas a trabajar?",
+  "roleOwner": "Dueña",
+  "roleStaff": "Equipo",
+
+  "homeGreeting": "Hola, {name}",
+  "@homeGreeting": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "homeGreetingNoName": "Hola",
+  "homeActiveStore": "Estás en {store}",
+  "@homeActiveStore": {
+    "placeholders": { "store": { "type": "String" } }
+  },
+  "homeComingSoon": "Aquí vas a ver tus pedidos, productos y tu tienda.",
+  "homeSwitchStore": "Cambiar de tienda",
+  "logout": "Cerrar sesión",
+  "loggingOut": "Cerrando sesión…"
+}
