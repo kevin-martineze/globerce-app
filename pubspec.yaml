@@ -84,7 +84,7 @@ flutter:
 
 # Icono de la app: `dart run flutter_launcher_icons`.
 # Las fuentes están en assets/launcher/ (fuera de los assets del bundle) y
-# salen del isotipo de 512 px. Cuando llegue la marca en vector, se regeneran.
+# salen del render del isotipo a 2048 px, sin fondo, reducido a cada tamaño.
 flutter_launcher_icons:
   ios: true
   android: true
